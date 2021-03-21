@@ -1,0 +1,2 @@
+# for examples
+ffpyplayer>=4.3.2

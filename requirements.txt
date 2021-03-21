@@ -1,0 +1,9 @@
+# for building qtmodernredux module
+PySide2>=5.15.2
+build>=0.3.0
+setuptools>=51.3.3
+
+# for testing
+mypy>=0.790
+flake8>=3.8.4
+pylint>=2.6.0

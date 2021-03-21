@@ -1,0 +1,120 @@
+#### Python files ####
+*.swp
+*.swo
+*.orig
+__pycache__
+__pycache__/
+*.py[cod]
+*$py.class
+
+#### ignore IDE files ####
+*.sublime-workspace
+*.sublime-project
+.idea/*
+.idea
+
+#### Backups ####
+.bak
+
+#### Mac files ####
+.DS_Store
+
+#### Distribution / packaging ####
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggfs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.eggs/
+MANIFEST
+
+#### Installer logs ####
+pip-log.txt
+pip-delete-this-directory.txt
+
+#### Unit test / coverage reports ####
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+flake8.out
+pylint.out
+mypy.out
+bandit.out
+
+#### Translations ####
+*.mo
+*.pot
+
+#### Django stuff ####
+*.log
+local_settings.py
+db.sqlite3
+
+#### Flask stuff ####
+instance/
+.webassets-cache
+
+#### Scrapy stuff ####
+.scrapy
+
+#### Sphinx documentation ####
+docs/_build/
+docs/*.rst
+
+#### PyBuilder ####
+target/
+
+#### Jupyter Notebook ####
+.ipynb_checkpoints
+
+#### pyenv ####
+.python-version
+
+#### celery beat schedule file ####
+celerybeat-schedule
+
+#### SageMath parsed files ####
+*.sage.py
+
+#### Environments ####
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+#### Spyder project settings ####
+.spyderproject
+.spyproject
+
+#### Rope project settings ####
+.ropeproject
+
+#### mkdocs documentation ####
+/site
+
+#### mypy ####
+.mypy_cache/
+
+#### local file directory ####
+image_uploads/
+image_uploads_recycle/

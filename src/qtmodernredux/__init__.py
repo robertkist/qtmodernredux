@@ -1,0 +1,1 @@
+from .qtmodernredux import QtModernRedux

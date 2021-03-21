@@ -1,4 +1,4 @@
-[![Build Status](https://www.travis-ci.com/robertkist/qtmodernredux.svg?branch=main)](https://www.travis-ci.com/robertkist/qtmodernredux)
+[![Build Status](https://www.travis-ci.com/robertkist/qtmodernredux.svg?branch=master)](https://www.travis-ci.com/robertkist/qtmodernredux)
 
 QtModernRedux
 =============

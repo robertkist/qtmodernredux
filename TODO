@@ -1,0 +1,21 @@
+A list of issues, limitations and potential solutions:
+
+# Windows: (issue) in 'qdialogs' example the 'hide details' button doesn't work properly in the message box windows
+# Windows: (polish) Shadow size on windows hidpi too small
+# Windows: (issue) Moving windows between screens with different scaling settings corrupts the window
+#          Root cause is the frameless_window_hint. Windows with regular Windows titlebars / frames do not have this problem.
+#          Proposed solution: when the window is dragged in mouseMoveEvent detect - before it happens - if any of the window's
+#          pixels would end up being drawn on a screen with a different scaling. In this case pop the entire window all at once
+#          onto the target screen - avoiding that the window is drawn on screens with different scale factors at the same time. i.e.
+#          the window can only ever be drawn on a single screen. Needs a solution if the user has 3 montors though (?)
+#          Note: example code (commented out) exists as as a proof of concept (keyPressEvent in windowstyle.modernwindow.py)
+# MacOS: (polish) add SVG icons in window buttons to mimic macOS better
+# MacOS, Linux: (polish) add better cursors for window resizing. Current ones are low-res
+# MacOS, Linux: (issue) ffplayer example minimize doesn't always fully resize down to original size on macos. QtModernRedux problem or Qt in general?
+# All: (polish) insert a small area to the right of the tabbar for dragging the window in situations where the tabbar takes up the entire titlebar width.
+# All: (polish) window buttons (min, max, close) should go grey (i.e. into a disabled state) when window loses focus
+# All: (polish) Write API docs
+
+# publish on pypi
+# Pypi link in readme
+# add screenshots to readme

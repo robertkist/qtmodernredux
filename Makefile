@@ -59,6 +59,7 @@ define run_pylint
 	--extension-pkg-whitelist=PySide2,shiboken2 \
 	--msg-template="{path}:{module}:{line}: [{msg_id}({symbol}), {obj}] {msg}"\
 	--jobs=0 \
+	-d unused-private-member \
 	-d attribute-defined-outside-init \
 	-d global-statement \
 	-d unsubscriptable-object \

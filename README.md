@@ -62,6 +62,9 @@ Tested operating systems:
 
 Building and Installation
 -------------------------
+Skip this section if you're installing via Pypi.
+This section is only relevant if you got QtModernRedux from Github.
+
 This section describes how to create a wheel (.whl) from the code in the repository.
 You will need to have Python 3.8 or newer installed in a virtual environment (virtualenv). 
 This virtual environment must be located within the root of the qtmodernredux project folder.
@@ -78,6 +81,8 @@ Use pip to install the wheel that you just built.
 
 Running the Examples
 --------------------
+Examples can be found at https://github.com/robertkist/qtmodernredux in src/examples.
+
 Before you can run the examples you must install QtModernRedux via pip or build it according to the instructions above.
 You will also need to have PySide2 installed, and optionally the ffpyplayer module (see requirements.txt).
 
@@ -130,4 +135,4 @@ Tips:
 
 Contributions
 -------------
-Contributions, suggestions and forks are welcome!
+Contributions, suggestions and forks are welcome - see https://github.com/robertkist/qtmodernredux

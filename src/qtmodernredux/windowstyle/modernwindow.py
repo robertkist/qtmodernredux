@@ -635,7 +635,7 @@ class ModernWindow(QDialog):
                 # fixes this.
                 size = self.size()
                 self.resize(size.width(), size.height() - 1)
-                QApplication.instance().processEvents()  # type: ignore
+                QApplication.instance().processEvents()
                 self.resize(size.width(), size.height())
         else:
             self.setWindowState(Qt.WindowNoState)

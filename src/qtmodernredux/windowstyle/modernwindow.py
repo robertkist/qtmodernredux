@@ -209,6 +209,7 @@ class ModernWindow(QDialog):
         self.__window_pos: Optional[QPoint] = None
         self.__window_buttons_width: int = 0
         self.__window_buttons_position: str = window_buttons_position
+        self.__center_window_first_time: bool = True  # makes sure the window is only centered on 1st show event
         # create main contaner layout
         self.__vbox_master_layout = QGridLayout(self)
         self.__vbox_master_layout.setContentsMargins(0, 0, 0, 0)
@@ -368,8 +369,9 @@ class ModernWindow(QDialog):
         parent = self.parent()
         # center MainWindow on screen
         if CENTER_MAINWINDOW:
-            if parent is None:
+            if parent is None and self.__center_window_first_time:  # type: ignore
                 self.move(QApplication.desktop().screenGeometry(self).center() - self.rect().center())  # type: ignore
+                self.__center_window_first_time = False  # only center the window on the initial show event
         # center dialogs relative to parent window
         if ALIGN_CHILD_WINDOWS and parent is not None:
             try:
@@ -621,12 +623,24 @@ class ModernWindow(QDialog):
             self._maximize_button.setVisible(True)
             self._maximize_button.setEnabled(True)
         self.__maximized = False
+
         if self.__use_shadow:
-            self.layout().setMargin(self.__style.window.SHADOW_RADIUS_PX)  # adjust window for drop-shadow margin
             self.__show_resizers(True)
             self.__drag_move_enabled = True
+            self.setWindowState(Qt.WindowNoState)
+            self.layout().setMargin(self.__style.window.SHADOW_RADIUS_PX)  # adjust window for drop-shadow margin
+            if sys.platform == 'win32':
+                # There is a problem with correct redraw / update on Win10 - the transparency of the
+                # shadow effect may be broken on window restore. Re-adjusting the height of the window
+                # fixes this.
+                size = self.size()
+                self.resize(size.width(), size.height() - 1)
+                QApplication.instance().processEvents()
+                self.resize(size.width(), size.height())
+        else:
+            self.setWindowState(Qt.WindowNoState)
+
         self.__move_window_buttons()  # adjust window for drop-shadow margin
-        self.setWindowState(Qt.WindowNoState)
         self._maximize_button.setAttribute(Qt.WA_UnderMouse, False)  # prevent hover state form getting stuck
         self._restore_button.setAttribute(Qt.WA_UnderMouse, False)
 
@@ -639,12 +653,16 @@ class ModernWindow(QDialog):
             self._maximize_button.setVisible(False)
             self._maximize_button.setEnabled(False)
         self.__maximized = True
+
         if self.__use_shadow:
+            self.setWindowState(Qt.WindowMaximized)  # adjust window for drop-shadow margin
             self.layout().setMargin(0)
             self.__show_resizers(False)
             self.__drag_move_enabled = False
+        else:
+            self.setWindowState(Qt.WindowMaximized)  # adjust window for drop-shadow margin
+
         self.__move_window_buttons()  # adjust window for drop-shadow margin
-        self.setWindowState(Qt.WindowMaximized)  # adjust window for drop-shadow margin
         self._maximize_button.setAttribute(Qt.WA_UnderMouse, False)  # prevent hover state form getting stuck
         self._restore_button.setAttribute(Qt.WA_UnderMouse, False)
 

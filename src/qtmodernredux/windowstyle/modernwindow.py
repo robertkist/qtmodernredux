@@ -366,6 +366,10 @@ class ModernWindow(QDialog):
         """
         if not isinstance(self.__window, QDIALOG_TYPES):
             self.resizer_bl.adjust_resizers(self.geometry())  # adjusting one resizer adjusts all other resizers too
+
+        if(self.__maximized and not self.windowState() == Qt.WindowMaximized):
+            self.setWindowState(Qt.WindowMaximized)  # restore from Win taskbar somestimes doesn't re-maximize the window
+
         parent = self.parent()
         # center MainWindow on screen
         if CENTER_MAINWINDOW:

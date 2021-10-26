@@ -35,7 +35,7 @@ class QtModernRedux:
              titlebar_text_color: Optional[QColor] = None,
              titlebar_widget: Optional[Union[QWidget, QTabWidget]] = None,
              window_buttons_position: Optional[str] = None,
-             native_window: bool = False) -> ModernWindow:
+             native_window: bool = False) -> Union[ModernWindow, Any]:
         """Wraps the given widget into a styled window frame"""
         assert cls.__style_object is not None, "ERROR: must create a QModernRedux qApplication object first"
         if native_window:  # use window chrome provided by OS

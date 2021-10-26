@@ -47,7 +47,7 @@ Features
 * Improved themeing of additional widgets, such as QTableView, QListView, etc.
 * Works with tools such as PyInstaller and CxFreeze.
 * Provides a work-around for using QMediaPlayer on Windows in styled windows.
-* Use native titlebar's provided by MacOS/Windows/Unix Window Manager or use QtModernRedux's own titlebar.
+* Use native titlebars provided by MacOS/Windows/Unix Window Manager or use QtModernRedux's own titlebar.
 * Supports definition of custom styles.
 
 Compatibility

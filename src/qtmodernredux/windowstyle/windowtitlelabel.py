@@ -1,8 +1,8 @@
 import sys
 from typing import Any
-from PySide2.QtCore import QRectF, QRect
-from PySide2.QtWidgets import QMessageBox, QLabel
-from PySide2.QtGui import Qt, QColor, QPainter, QPen, QPaintEvent, QFontMetrics, QBrush
+from PySide6.QtCore import QRectF, QRect
+from PySide6.QtWidgets import QMessageBox, QLabel
+from PySide6.QtGui import Qt, QColor, QPainter, QPen, QPaintEvent, QFontMetrics, QBrush
 
 
 __author__ = "Robert Kist"

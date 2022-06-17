@@ -1,6 +1,6 @@
 import sys
-from PySide2.QtWidgets import QMainWindow, QMessageBox
-from PySide2.QtGui import QIcon
+from PySide6.QtWidgets import QMainWindow, QMessageBox
+from PySide6.QtGui import QIcon
 from qtmodernredux import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
@@ -50,7 +50,7 @@ class MainWindow(QMainWindow):
         msg.setInformativeText("This is additional information")
         msg.setWindowTitle("MessageBox demo")
         msg.setDetailedText("The details are as follows:")
-        retval = msg.exec_()
+        retval = msg.exec()
         print("value of pressed message box button:", retval)
 
 
@@ -60,4 +60,4 @@ if __name__ == "__main__":
                             window_buttons_position=QtModernRedux.WINDOW_BUTTONS_RIGHT)
     mw.setWindowIcon(QIcon("../example_data/sample.png"))
     mw.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

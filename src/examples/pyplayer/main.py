@@ -1,8 +1,8 @@
 import sys
 import time
 from ffpyplayer.player import MediaPlayer
-from PySide2.QtWidgets import QMainWindow, QApplication, QLabel
-from PySide2.QtGui import QImage, QPixmap, Qt
+from PySide6.QtWidgets import QMainWindow, QApplication, QLabel
+from PySide6.QtGui import QImage, QPixmap, Qt
 from qtmodernredux import QtModernRedux
 
 
@@ -71,8 +71,7 @@ if __name__ == "__main__":
     app = QtModernRedux.QApplication(sys.argv)
     mw = QtModernRedux.wrap(MainWindow(),
                             window_buttons_position=QtModernRedux.WINDOW_BUTTONS_RIGHT)
-    desktop = QApplication.desktop()
     mw.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
 

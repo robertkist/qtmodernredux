@@ -1,11 +1,11 @@
 import sys
 from typing import Any, Optional, Union
-from PySide2.QtSvg import QSvgRenderer
-from PySide2.QtCore import Slot, Signal, QEvent, QObject, QPoint, QRectF, QRect
-from PySide2.QtWidgets import QWidget, QSizePolicy, QVBoxLayout, QToolButton, QGridLayout, QMessageBox, \
+from PySide6.QtSvg import QSvgRenderer
+from PySide6.QtCore import Slot, Signal, QEvent, QObject, QPoint, QRectF, QRect
+from PySide6.QtWidgets import QWidget, QSizePolicy, QVBoxLayout, QToolButton, QGridLayout, QMessageBox, \
     QGraphicsDropShadowEffect, QDialog, QInputDialog, QApplication, QTabWidget, QTabBar, QLayout
-from PySide2.QtGui import Qt, QCloseEvent, QRegion, QPainterPath, QMouseEvent, QColor, QResizeEvent, QPixmap, QPainter, \
-    QShowEvent, QIcon, QKeyEvent
+from PySide6.QtGui import Qt, QCloseEvent, QRegion, QPainterPath, QMouseEvent, QColor, QResizeEvent, QPixmap, QPainter, \
+    QShowEvent, QIcon, QKeyEvent, QGuiApplication, QCursor
 from qtmodernredux.windowstyle.windowresizer import Resizer
 from qtmodernredux.windowstyle.windowtitlelabel import WindowTitleLabel
 from qtmodernredux.windowstyle.windowframe import WindowFrame
@@ -374,7 +374,7 @@ class ModernWindow(QDialog):
         # center MainWindow on screen
         if CENTER_MAINWINDOW:
             if parent is None and self.__center_window_first_time:  # type: ignore
-                self.move(QApplication.desktop().screenGeometry(self).center() - self.rect().center())  # type: ignore
+                self.move(QGuiApplication.screenAt(QCursor.pos()).geometry().center() - self.rect().center())
                 self.__center_window_first_time = False  # only center the window on the initial show event
         # center dialogs relative to parent window
         if ALIGN_CHILD_WINDOWS and parent is not None:

@@ -1,5 +1,5 @@
-from PySide2.QtWidgets import QApplication
-from PySide2.QtGui import QPalette, QColor
+from PySide6.QtWidgets import QApplication
+from PySide6.QtGui import QPalette, QColor
 import wow_style.widgetstyle as wgs
 import wow_style.windowstyle as wds
 

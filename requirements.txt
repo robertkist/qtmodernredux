@@ -1,5 +1,5 @@
 # for building qtmodernredux module
-PySide2>=5.15.2
+PySide6>=6.3.0
 build>=0.3.0
 setuptools>=51.3.3
 

@@ -1,7 +1,7 @@
 from typing import Any
-from PySide2.QtCore import QRect, Signal
-from PySide2.QtWidgets import QWidget
-from PySide2.QtGui import Qt, QColor, QPainter, QPen, QBrush, QPaintEvent, QMouseEvent
+from PySide6.QtCore import QRect, Signal
+from PySide6.QtWidgets import QWidget
+from PySide6.QtGui import Qt, QColor, QPainter, QPen, QBrush, QPaintEvent, QMouseEvent
 
 
 __author__ = "Robert Kist"

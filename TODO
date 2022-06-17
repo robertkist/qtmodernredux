@@ -15,7 +15,3 @@ A list of issues, limitations and potential solutions:
 # All: (polish) insert a small area to the right of the tabbar for dragging the window in situations where the tabbar takes up the entire titlebar width.
 # All: (polish) window buttons (min, max, close) should go grey (i.e. into a disabled state) when window loses focus
 # All: (polish) Write API docs
-
-# publish on pypi
-# Pypi link in readme
-# add screenshots to readme

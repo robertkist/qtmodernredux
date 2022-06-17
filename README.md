@@ -3,23 +3,28 @@
 QtModernRedux
 =============
 
-Author: Robert Kist (c) 2021 MIT License
+Author: Robert Kist (c) 2021, 2022 MIT License
 
 QtModernRedux is a modern dark window and widget theme for PySide2, loosely based on and inspired by
 Gerard Marull-Paretas' excellent qtmodern 0.2.0 theme (https://pypi.org/project/qtmodern/, MIT License).
 
 
-Quick-Start
------------
+Quick-Start PySide6
+-------------------
 
 If you just want to use QtModernRedux, then the quickest way is to install QtModernRedux from PyPi (https://www.pypi.org/project/QtModernRedux/) via pip:
 
-```pip install qtmodernredux```
+```pip install qtmodernredux6```
+
+Quick-Start PySide2
+-------------------
+
+```pip install qtmodernredux6```
 
 Screenshots
 -----------
 
-Basic Widget on Mac OS:
+Basic Widget on MacOS:
 
 ![QSplitter example](https://user-images.githubusercontent.com/9162068/111871987-e184b500-89c7-11eb-8ec7-be316179a410.png)
 
@@ -31,7 +36,7 @@ Custom titlebar on Windows:
 
 ![custom titlebar example](https://user-images.githubusercontent.com/9162068/111871399-c8c6d000-89c4-11eb-8266-1b861ef9bedf.png)
 
-Custom titlebar on Mac OS:
+Custom titlebar on MacOS:
 
 ![custom titlebar example](https://user-images.githubusercontent.com/9162068/111871747-c6657580-89c6-11eb-8b8c-d19bc550eed0.png)
 
@@ -52,12 +57,13 @@ Features
 
 Compatibility
 -------------
-* Python 3.8 or newer
+* Python 3.9 or newer
 * PySide2 (tested with 5.15.2)
+* PySide6 (tested with 6.3.0)
 
 Tested operating systems:
-* MacOS Big Sur (regular DPI and Retina)
-* Windows 10 (regular and high-DPI)
+* MacOS Big Sur & Monterey (regular DPI and Retina)
+* Windows 10, Windows 11 (regular and high-DPI)
 * Ubuntu 20.10 (regular and high-DPI)
 * PopOS 18.04 (regular and high-DPI)
 
@@ -65,6 +71,10 @@ Building and Installation
 -------------------------
 Skip this section if you're installing via Pypi.
 This section is only relevant if you got QtModernRedux from Github.
+
+IMPORTANT:
+* find the Pyside2 Version in the MAIN branch on Github
+* find the Pyside6 Version in the PySide6 branch on Github
 
 This section describes how to create a wheel (.whl) from the code in the repository.
 You will need to have Python 3.8 or newer installed in a virtual environment (virtualenv). 

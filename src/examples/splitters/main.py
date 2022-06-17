@@ -1,6 +1,6 @@
 import sys
-from PySide2.QtWidgets import QMainWindow, QApplication
-from PySide2.QtGui import QColor
+from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtGui import QColor
 from qtmodernredux import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
@@ -27,6 +27,5 @@ if __name__ == "__main__":
     mw = QtModernRedux.wrap(MainWindow(),
                             titlebar_color=QColor('#555555'),
                             window_buttons_position=QtModernRedux.WINDOW_BUTTONS_LEFT)
-    desktop = QApplication.desktop()
     mw.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

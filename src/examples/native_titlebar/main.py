@@ -1,5 +1,5 @@
 import sys
-from PySide2.QtWidgets import QMainWindow
+from PySide6.QtWidgets import QMainWindow
 from qtmodernredux import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     app = QtModernRedux.QApplication(sys.argv)
     mw = QtModernRedux.wrap(MainWindow(), native_window=True)  # enable native titlebar
     mw.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

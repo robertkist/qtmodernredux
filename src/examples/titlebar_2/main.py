@@ -1,6 +1,6 @@
 import sys
-from PySide2.QtWidgets import QMainWindow
-from PySide2.QtGui import QColor
+from PySide6.QtWidgets import QMainWindow
+from PySide6.QtGui import QColor
 from qtmodernredux import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
@@ -43,4 +43,4 @@ if __name__ == "__main__":
                                        titlebar_widget=main_window.title_widget,  # widget to put into the titlebar
                                        window_buttons_position=QtModernRedux.WINDOW_BUTTONS_RIGHT)
     modern_window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

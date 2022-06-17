@@ -10,4 +10,9 @@ QScrollArea {
 QScrollArea > QWidget > QWidget {
     background-color: palette(alternate-base);
 }
+
+QAbstractScrollArea::corner {
+    background: transparent;
+    border: none;
+}
 '''

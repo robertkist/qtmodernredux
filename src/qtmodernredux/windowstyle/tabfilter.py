@@ -1,5 +1,5 @@
-from PySide2.QtWidgets import QWidget, QTabBar
-from PySide2.QtCore import QObject, QEvent, QPoint
+from PySide6.QtWidgets import QWidget, QTabBar
+from PySide6.QtCore import QObject, QEvent, QPoint
 
 
 __author__ = "Robert Kist; Jean-Sébastien Gosselin"

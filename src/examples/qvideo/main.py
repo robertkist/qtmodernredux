@@ -1,8 +1,8 @@
 import sys
-from PySide2.QtCore import QUrl, QFileInfo
-from PySide2.QtWidgets import QMainWindow, QApplication
-from PySide2.QtMultimediaWidgets import QVideoWidget
-from PySide2.QtMultimedia import QMediaPlayer, QMediaContent
+from PySide6.QtCore import QUrl, QFileInfo
+from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtMultimediaWidgets import QVideoWidget
+from PySide6.QtMultimedia import QMediaPlayer
 from qtmodernredux import QtModernRedux
 
 
@@ -25,16 +25,16 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.resize(600, 400)
-        self.media_player = QMediaPlayer(self, QMediaPlayer.VideoSurface)
+        self.media_player = QMediaPlayer(self) #, QMediaPlayer.VideoSurface)
         self.video_widget = QVideoWidget(self)
         self.setCentralWidget(self.video_widget)
 
     def showEvent(self, event) -> None:
         if sys.platform in ['linux', 'darwin']:
-            media_content = QMediaContent(QUrl.fromLocalFile(QFileInfo('./../example_data/sample.mp4').absoluteFilePath()))
+            media_content = QUrl.fromLocalFile(QFileInfo('./../example_data/sample.mp4').absoluteFilePath())
         else:
-            media_content = QMediaContent(QUrl.fromLocalFile(QFileInfo('./../example_data/pusheen.gif').absoluteFilePath()))
-        self.media_player.setMedia(media_content)
+            media_content = QUrl.fromLocalFile(QFileInfo('./../example_data/pusheen.gif').absoluteFilePath())
+        self.media_player.setSource(media_content)
         self.media_player.setVideoOutput(self.video_widget)
         self.video_widget.show()
         self.video_widget.update()
@@ -48,6 +48,5 @@ if __name__ == "__main__":
                             title_bar=True,
                             transparent_window=False,
                             window_buttons_position=QtModernRedux.WINDOW_BUTTONS_RIGHT)
-    desktop = QApplication.desktop()
     mw.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

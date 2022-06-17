@@ -1,7 +1,7 @@
 from typing import Optional, Any, Tuple, Dict
-from PySide2.QtCore import Signal, QPoint, QRect
-from PySide2.QtWidgets import QLabel
-from PySide2.QtGui import Qt, QMouseEvent, QCursor
+from PySide6.QtCore import Signal, QPoint, QRect
+from PySide6.QtWidgets import QLabel
+from PySide6.QtGui import Qt, QMouseEvent, QCursor
 
 
 __author__ = "Robert Kist"

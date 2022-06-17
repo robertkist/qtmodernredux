@@ -1,7 +1,7 @@
 import sys
 from typing import Any, Sequence, Optional, Union
-from PySide2.QtWidgets import QApplication, QTabWidget, QWidget
-from PySide2.QtGui import Qt, QFontDatabase, QColor
+from PySide6.QtWidgets import QApplication, QTabWidget, QWidget
+from PySide6.QtGui import Qt, QFontDatabase, QColor
 import qtmodernredux.resources.qt_resources  # pylint: disable=unused-import
 from qtmodernredux.windowstyle.modernwindow import ModernWindow, WINDOW_BUTTONS_LEFT, WINDOW_BUTTONS_RIGHT
 from .apl_style import Style

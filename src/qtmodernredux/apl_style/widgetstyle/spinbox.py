@@ -3,7 +3,7 @@ __author__ = "Robert Kist"
 
 # QSpinBox, QDateTimeEdit
 spinbox_style = '''
-QSpinBox, QDateTimeEdit {
+QSpinBox, QDoubleSpinBox, QDateTimeEdit {
     background: palette(button);
     border-radius: 5px;
     height: 22px;
@@ -17,7 +17,7 @@ QSpinBox, QDateTimeEdit {
     margin-right: 0px;
 }
 
-QSpinBox:disabled, QDateTimeEdit:disabled {
+QSpinBox:disabled, QDoubleSpinBox:disabled, QDateTimeEdit:disabled {
     border-radius: 5px;
     margin-top: 1px;
     margin-bottom: 1px;
@@ -27,31 +27,31 @@ QSpinBox:disabled, QDateTimeEdit:disabled {
     border:1px solid palette(midlight);
 }
 
-QSpinBox::down-button, QDateTimeEdit::down-button {
+QSpinBox::down-button, QDoubleSpinBox::down-button, QDateTimeEdit::down-button {
     subcontrol-origin: margin;
     subcontrol-position: bottom right;
     border-image: url(:/third_party/icons/arrow-down.svg) 1;
 }
 
-QSpinBox::up-button, QDateTimeEdit::up-button {
+QSpinBox::up-button, QDoubleSpinBox::up-button, QDateTimeEdit::up-button {
     subcontrol-origin: margin;
     subcontrol-position: top right;
     border-image: url(:/third_party/icons/arrow-up.svg) 1;
 }
 
-QSpinBox::up-button:disabled, QDateTimeEdit::up-button:disabled {
+QSpinBox::up-button:disabled, QDoubleSpinBox::up-button:disabled, QDateTimeEdit::up-button:disabled {
     subcontrol-origin: margin;
     subcontrol-position: top right;
     border-image: url(:/third_party/icons/arrow-up.svg) 1;
 }
 
-QSpinBox::down-button:disabled, QDateTimeEdit::down-button:disabled {
+QSpinBox::down-button:disabled, QDoubleSpinBox::down-button:disabled, QDateTimeEdit::down-button:disabled {
     subcontrol-origin: margin;
     subcontrol-position: bottom right;
     border-image: url(:/third_party/icons/arrow-down.svg) 1;
 }
 
-QSpinBox::up-button:pressed, QDateTimeEdit::up-button:pressed {
+QSpinBox::up-button:pressed, QDoubleSpinBox::up-button:pressed, QDateTimeEdit::up-button:pressed {
     margin: 1px;
     subcontrol-origin: margin;
     subcontrol-position: top right;
@@ -59,7 +59,7 @@ QSpinBox::up-button:pressed, QDateTimeEdit::up-button:pressed {
     background-color: palette(highlight);
 }
 
-QSpinBox::down-button:pressed, QDateTimeEdit::down-button:pressed {
+QSpinBox::down-button:pressed, QDoubleSpinBox::down-button:pressed, QDateTimeEdit::down-button:pressed {
     margin: 1px;
     subcontrol-origin: margin;
     subcontrol-position: bottom right;

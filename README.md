@@ -42,7 +42,7 @@ Features
 * Provides window scaling controls for 8 cardinal directions.
 * Provides a 'no-title bar' mode, allowing users to create modern applications with widgets placed directly into the title-bar
   itself, such as Chrome's "tab titlebar", or MS Teams' titlebar.
-* Provides a window drop-shadow for window managers which do not support drow shadows by default on Qt frameless windows.
+* Provides a window drop-shadow for window managers which do not support drop shadows by default on Qt frameless windows.
 * Provides vector-based hi-res icons, replacing Qt Fusion style's low quality icons, for some platforms.
 * Improved themeing of additional widgets, such as QTableView, QListView, etc.
 * Works with tools such as PyInstaller and CxFreeze.

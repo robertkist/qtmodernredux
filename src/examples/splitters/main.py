@@ -6,7 +6,7 @@ from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstates the styling of the QSplitter element.
+This example demonstrates the styling of the QSplitter element.
 """
 
 

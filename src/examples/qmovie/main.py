@@ -5,7 +5,7 @@ from qtmodernredux import QtModernRedux
 
 
 """
-This example demonstates using a QMovie inside a QtModernRedux window.
+This example demonstrates using a QMovie inside a QtModernRedux window.
 """
 
 

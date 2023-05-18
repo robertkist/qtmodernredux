@@ -5,7 +5,7 @@ from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstates how user-defined custom styles can be used with QtModernRedux.
+This example demonstrates how user-defined custom styles can be used with QtModernRedux.
 The new custom style lives entirely in the 'wow_style' sub-directory.
 """
 

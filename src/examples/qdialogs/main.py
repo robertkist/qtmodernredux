@@ -6,7 +6,7 @@ from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstates various styled QMessageBox dialogs, using enhanced notification icons,
+This example demonstrates various styled QMessageBox dialogs, using enhanced notification icons,
 suitable for HighDPI and Retina displays. 
 This example also demonstrates setting an icon for the application.
 """

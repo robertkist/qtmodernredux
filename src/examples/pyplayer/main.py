@@ -7,7 +7,7 @@ from qtmodernredux import QtModernRedux
 
 
 """
-This example demonstates an alternative media playback control (ffpyplayer) which can be used instead
+This example demonstrates an alternative media playback control (ffpyplayer) which can be used instead
 of QMediaPlayer, which not only offers wider video format support, but also better compatibility with
 QtModernRedux. 
 """

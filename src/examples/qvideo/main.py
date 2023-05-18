@@ -7,7 +7,7 @@ from qtmodernredux import QtModernRedux
 
 
 """
-This example demonstates the feature to turn off window transparency.
+This example demonstrates the feature to turn off window transparency.
 By default, QtModernRedux tells Qt to create a transparent window, that supports anti-aliased rounded corners
 and drop-shadow effects. On some platforms, such as Windows, this conflicts with the QMediaPlayer component.
 

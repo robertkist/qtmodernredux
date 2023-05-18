@@ -1,3 +1,4 @@
+import platform
 import sys
 from typing import Any, Optional, Union
 from PySide6.QtSvg import QSvgRenderer
@@ -409,7 +410,6 @@ class ModernWindow(QDialog):
         if isinstance(event, QResizeEvent):
             assert self.__window is not None
             geometry = self.__window.geometry()
-            print(sys.platform)
             if sys.platform in ['darwin', 'win32']:
                 self.setFixedSize(geometry.width() + self.__style.window.SHADOW_RADIUS_PX * 2,
                                   geometry.height() + self.__style.window.SHADOW_RADIUS_PX * 2)
@@ -726,6 +726,16 @@ class ModernWindow(QDialog):
                 self.__tab_widget.setStyleSheet(self.__get_title_tabwidget_style(self.__titlebar_color))
             else:
                 self.__tab_widget.setStyleSheet(self.__get_title_tabwidget_style(self.__titlebar_nofocus_color))
+
+    def exec(self):
+        """
+        Use native MessageBox dialogs on macOS Ventura
+        """
+        if isinstance(self.__window, QMessageBox) and sys.platform == "darwin":
+            if platform.mac_ver()[0].startswith("13."):
+                self.__window.exec()
+                return
+        super().exec()
 
     def __adjust_title_tabwidget(self, tab_widget: QTabWidget) -> None:
         """

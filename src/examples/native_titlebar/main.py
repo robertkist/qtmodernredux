@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtWidgets import QMainWindow
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
 

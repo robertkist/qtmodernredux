@@ -3,11 +3,11 @@ import time
 from ffpyplayer.player import MediaPlayer
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel
 from PySide6.QtGui import QImage, QPixmap, Qt
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 
 
 """
-This example demonstrates an alternative media playback control (ffpyplayer) which can be used instead
+This example demonstates an alternative media playback control (ffpyplayer) which can be used instead
 of QMediaPlayer, which not only offers wider video format support, but also better compatibility with
 QtModernRedux. 
 """

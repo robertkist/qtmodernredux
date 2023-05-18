@@ -1,11 +1,11 @@
 import sys
 from PySide6.QtWidgets import QMainWindow, QApplication, QLabel
 from PySide6.QtGui import QMovie, Qt
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 
 
 """
-This example demonstrates using a QMovie inside a QtModernRedux window.
+This example demonstates using a QMovie inside a QtModernRedux window.
 """
 
 

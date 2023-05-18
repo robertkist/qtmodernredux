@@ -1,7 +1,7 @@
 import sys
 from PySide6.QtWidgets import QMainWindow
 from PySide6.QtGui import QColor
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
 

@@ -1,11 +1,11 @@
 import sys
 from PySide6.QtWidgets import QMainWindow, QMessageBox
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstrates how user-defined custom styles can be used with QtModernRedux.
+This example demonstates how user-defined custom styles can be used with QtModernRedux.
 The new custom style lives entirely in the 'wow_style' sub-directory.
 """
 

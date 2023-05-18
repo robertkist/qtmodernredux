@@ -1,12 +1,12 @@
 import sys
 from PySide6.QtWidgets import QMainWindow, QMessageBox
 from PySide6.QtGui import QIcon
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstrates various styled QMessageBox dialogs, using enhanced notification icons,
+This example demonstates various styled QMessageBox dialogs, using enhanced notification icons,
 suitable for HighDPI and Retina displays. 
 This example also demonstrates setting an icon for the application.
 """

@@ -2,20 +2,20 @@
 # Preamble
 #######################################################################
 
-QtModernRedux is a modern dark window and widget theme for PySide2, loosely based on
-Gerard Marull-Paretas' original QtModern theme (MIT license). QtModernRedux includes
+QtModernRedux6 is a modern dark window and widget theme for PySide6, loosely based on
+Gerard Marull-Paretas' original QtModern theme (MIT license). QtModernRedux6 includes
 parts of QtModern's code, the Roboto font, and parts of System76's PopOS Icon theme.
-Licenses for QtModernRedux and all other authors' work that is included with it are
+Licenses for QtModernRedux6 and all other authors' work that is included with it are
 presented below.
 
 #######################################################################
-# QtModernRedux License
+# QtModernRedux6 License
 #######################################################################
 
 MIT License
 -----------
 
-QtModernRedux (c) copyright 2021 by Robert Kist
+QtModernRedux6 (c) copyright 2023 by Robert Kist
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation the

@@ -1,12 +1,12 @@
 import sys
 from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtGui import QColor
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 from mainwindow_ui import Ui_MainWindow
 
 
 """
-This example demonstrates the styling of the QSplitter element.
+This example demonstates the styling of the QSplitter element.
 """
 
 

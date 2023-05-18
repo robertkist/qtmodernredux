@@ -3,11 +3,11 @@ from PySide6.QtCore import QUrl, QFileInfo
 from PySide6.QtWidgets import QMainWindow
 from PySide6.QtMultimediaWidgets import QVideoWidget
 from PySide6.QtMultimedia import QMediaPlayer
-from qtmodernredux import QtModernRedux
+from qtmodernredux6 import QtModernRedux
 
 
 """
-This example demonstrates the feature to turn off window transparency.
+This example demonstates the feature to turn off window transparency.
 By default, QtModernRedux tells Qt to create a transparent window, that supports anti-aliased rounded corners
 and drop-shadow effects. On some platforms, such as Windows, this conflicts with the QMediaPlayer component.
 

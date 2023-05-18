@@ -1,25 +1,24 @@
 [![Build Status](https://www.travis-ci.com/robertkist/qtmodernredux.svg?branch=master)](https://www.travis-ci.com/robertkist/qtmodernredux)
 
-QtModernRedux
-=============
+QtModernRedux6
+==============
 
 Author: Robert Kist (c) 2021, 2022 MIT License
 
-QtModernRedux is a modern dark window and widget theme for PySide2, loosely based on and inspired by
+QtModernRedux6 is a modern dark window and widget theme for PySide6 (Qt6), loosely based on and inspired by
 Gerard Marull-Paretas' excellent qtmodern 0.2.0 theme (https://pypi.org/project/qtmodern/, MIT License).
 
 
 Quick-Start PySide6
 -------------------
 
-If you just want to use QtModernRedux, then the quickest way is to install QtModernRedux from PyPi (https://www.pypi.org/project/QtModernRedux/) via pip:
+If you just want to use QtModernRedux6, then the quickest way is to install QtModernRedux6 via pip: 
 
 ```pip install qtmodernredux6```
 
-Quick-Start PySide2
--------------------
+PyPi Link: https://www.pypi.org/project/QtModernRedux6/.
 
-```pip install qtmodernredux6```
+A version for PySide2 is available at: https://www.pypi.org/project/QtModernRedux/
 
 Screenshots
 -----------
@@ -52,33 +51,32 @@ Features
 * Improved themeing of additional widgets, such as QTableView, QListView, etc.
 * Works with tools such as PyInstaller and CxFreeze.
 * Provides a work-around for using QMediaPlayer on Windows in styled windows.
-* Use native titlebars provided by MacOS/Windows/Unix Window Manager or use QtModernRedux's own titlebar.
+* Use native titlebars provided by MacOS/Windows/Unix Window Manager or use QtModernRedux6's own titlebar.
 * Supports definition of custom styles.
 
 Compatibility
 -------------
 * Python 3.9 or newer
-* PySide2 (tested with 5.15.2)
 * PySide6 (tested with 6.3.0)
 
 Tested operating systems:
-* MacOS Big Sur & Monterey (regular DPI and Retina)
+* MacOS Ventura, Big Sur & Monterey (regular DPI and Retina)
 * Windows 10, Windows 11 (regular and high-DPI)
-* Ubuntu 20.10 (regular and high-DPI)
+* Ubuntu 20.10, 22.04 (regular and high-DPI)
 * PopOS 18.04 (regular and high-DPI)
 
 Building and Installation
 -------------------------
 Skip this section if you're installing via Pypi.
-This section is only relevant if you got QtModernRedux from Github.
+This section is only relevant if you got QtModernRedux6 from Github.
 
 IMPORTANT:
-* find the Pyside2 Version in the MAIN branch on Github
-* find the Pyside6 Version in the PySide6 branch on Github
+* You can find the latest Pyside6 Version in the `release_pyside6` branch on Github
+* You can find the latest Pyside2 Version in the `MAIN` branch on Github
 
 This section describes how to create a wheel (.whl) from the code in the repository.
 You will need to have Python 3.8 or newer installed in a virtual environment (virtualenv). 
-This virtual environment must be located within the root of the qtmodernredux project folder.
+This virtual environment must be located within the root of the qtmodernredux6 project folder.
 You will also need a verion of GNU make. 
 
 * macOS: you can install make via homebrew
@@ -94,8 +92,8 @@ Running the Examples
 --------------------
 Examples can be found at https://github.com/robertkist/qtmodernredux in src/examples.
 
-Before you can run the examples you must install QtModernRedux via pip or build it according to the instructions above.
-You will also need to have PySide2 installed, and optionally the ffpyplayer module (see requirements.txt).
+Before you can run the examples you must install QtModernRedux6 via pip or build it according to the instructions above.
+You will also need to have PySide6 installed, and optionally the ffpyplayer module (see requirements.txt).
 
 Note: if you want to experiment with the examples, you can use ```make examples``` to update the
 GUIs for examples - this will re-generate the Python sources from the QDesigner .ui files.
@@ -107,23 +105,25 @@ Install the required Python modules from requirements.txt and run ```make tests`
 Usage
 -----
 Currently, there is no API documentation, but the included examples in the Git repository should provide a 
-good starting point for using QtModernRedux.
+good starting point for using QtModernRedux6.
 
 Notes
 -----
 
 * Windows: Windows places the window-controls (minimize, maximize, close) on the right-hand side, whereas macOS puts them on 
-  the left-hand side. For Linux, QtModernRedux puts them on the right-hand side by default. This behaviour can be overridden.
+  the left-hand side. For Linux, QtModernRedux6 puts them on the right-hand side by default. This behaviour can be overridden.
 * Windows, Linux: on some systems it is not possible to resize a fully maximized window. This is not a bug.
 * Windows: dragging a styled window between screens with different scaling factors results in unpredictable behavior and may
   break the theme. This is a limitation of Qt and how Windows handles application scaling. A work-around may be added
-  in future versions of QtModernRedux.
+  in future versions of QtModernRedux6.
 * MacOS: Titlebar-less windows may briefly display a title-bar before being minimized. This is a known limitation
   of Qt and not a bug.
-* MacOS: Drop shadow: MacOS Big Sur automaticallys add a drop shadow to QtModernRedux windows. Therefore
+* MacOS: Drop shadow: MacOS Big Sur automaticallys add a drop shadow to QtModernRedux6 windows. Therefore
   the drop-shadow cannot be controlled or customized on these systems. Drop-shadow settings mostly apply to Linux
   window managers.
 * All Platforms: Code overriding this style-sheet, e.g. by calling widgets' .setStyleSheet() method, can potentially break the theme.
+* A Qt bug prevents moving windows with custom titlebars on Ubuntu 22.04 with Wayland. QtModernRedux6 works fine on those
+  systems using the OS native titlebars. (see https://forum.qt.io/topic/142043/pyside6-qmainwindow-move-not-working-on-ubuntu-22-04/7)
 
 Limitations
 -----------
@@ -139,7 +139,7 @@ Styles have 2 parts: styles for the window frame (windowstyle) and the individua
 
 Tips:
 * do not remove any of the pre-defined constants (see constants.py in windowstyle and widgetstyle directories)
-* try to work with the pre-defined constants as much as possible. Many of them are used in qtmodernredux's code
+* try to work with the pre-defined constants as much as possible. Many of them are used in qtmodernredux6's code
   to enable its functionality.
 * some sub-controls of widgets have been disabled (e.g. width set to 0, colors set to transparent, etc.) because they may
   cause problems

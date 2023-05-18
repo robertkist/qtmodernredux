@@ -1,5 +1,5 @@
-UIC := pyside2-uic
-RCC := pyside2-rcc
+UIC := pyside6-uic
+RCC := pyside6-rcc
 ECHO := echo
 CAT := cat
 RM := rm
@@ -74,14 +74,14 @@ define run_pylint
 	-d too-many-lines \
 	-d duplicate-code \
 	-d invalid-name \
-	-d no-self-use \
+	-d no-name-in-module \
 	-d import-error \
 	-d line-too-long \
 	-d fixme \
 	-d ungrouped-imports \
 	-d raise-missing-from \
 	-d consider-using-enumerate \
-	-d bad-continuation \
+	-d consider-using-f-string \
 	$(1)
 endef
 
@@ -99,22 +99,22 @@ wheel: resources
 
 .PHONY: resources
 resources: $(RESOURCES_OS)
-	@$(RCC) resources/resources.qrc -o ./src/qtmodernredux/resources/qt_resources.py.bak
-	@cd src && cd qtmodernredux && cd resources && $(CAT) qt_resources.py.bak >>qt_resources.py
-	@cd src && cd qtmodernredux && cd resources && $(RM) qt_resources.py.bak
+	@$(RCC) resources/resources.qrc -o ./src/qtmodernredux6/resources/qt_resources.py.bak
+	@cd src && cd qtmodernredux6 && cd resources && $(CAT) qt_resources.py.bak >>qt_resources.py
+	@cd src && cd qtmodernredux6 && cd resources && $(RM) qt_resources.py.bak
 	@$(ECHO) "finished building resources"
 
 .PHONY: resources_nix
 resources_nix:
-	@$(ECHO) "# flake8: noqa">./src/qtmodernredux/resources/qt_resources.py
-	@$(ECHO) "# type: ignore">>./src/qtmodernredux/resources/qt_resources.py
-	@$(ECHO) "# pylint: skip-file">>./src/qtmodernredux/resources/qt_resources.py
+	@$(ECHO) "# flake8: noqa">./src/qtmodernredux6/resources/qt_resources.py
+	@$(ECHO) "# type: ignore">>./src/qtmodernredux6/resources/qt_resources.py
+	@$(ECHO) "# pylint: skip-file">>./src/qtmodernredux6/resources/qt_resources.py
 
 .PHONY: resources_win
 resources_win:
-	@$(ECHO) # flake8: noqa>./src/qtmodernredux/resources/qt_resources.py
-	@$(ECHO) # type: ignore>>./src/qtmodernredux/resources/qt_resources.py
-	@$(ECHO) # pylint: skip-file>>./src/qtmodernredux/resources/qt_resources.py
+	@$(ECHO) # flake8: noqa>./src/qtmodernredux6/resources/qt_resources.py
+	@$(ECHO) # type: ignore>>./src/qtmodernredux6/resources/qt_resources.py
+	@$(ECHO) # pylint: skip-file>>./src/qtmodernredux6/resources/qt_resources.py
 
 .PHONY: examples
 examples: resources
@@ -131,12 +131,12 @@ test: resources test_mypy test_pylint test_flake8
 
 .PHONY: test_mypy
 test_mypy:
-	-@$(call run_mypy, ./src/qtmodernredux)
+	-@$(call run_mypy, ./src/qtmodernredux6)
 
 .PHONY: test_pylint
 test_pylint:
-	-@$(call run_pylint, ./src/qtmodernredux)
+	-@$(call run_pylint, ./src/qtmodernredux6)
 
 .PHONY: test_flake8
 test_flake8:
-	-@$(call run_flake8, ./src/qtmodernredux)
+	-@$(call run_flake8, ./src/qtmodernredux6)

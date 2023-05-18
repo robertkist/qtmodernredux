@@ -122,7 +122,10 @@ class ModernWindow(QDialog):
         def add_window_drop_shadow() -> None:
             """Adds a drop-shadow behind the window"""
             if self.__use_shadow:
-                self.layout().setMargin(self.__style.window.SHADOW_RADIUS_PX)
+                self.layout().setContentsMargins(self.__style.window.SHADOW_RADIUS_PX,
+                                                 self.__style.window.SHADOW_RADIUS_PX,
+                                                 self.__style.window.SHADOW_RADIUS_PX,
+                                                 self.__style.window.SHADOW_RADIUS_PX)
                 drop_shadow_effect = QGraphicsDropShadowEffect(self)
                 drop_shadow_effect.setEnabled(True)
                 drop_shadow_effect.setBlurRadius(self.__style.window.SHADOW_RADIUS_PX)
@@ -334,6 +337,8 @@ class ModernWindow(QDialog):
               widgetstyle/tabwidget_titlebar.py (border-width and border-image QSS attribute).
               Action: investigate a way so that this value doesn't have to be hard-coded.
         """
+        if self.__window is None:
+            return
         # if transparency is turned off, set a mask for some basic rounded corners:
         if not self.__transparent_window and self.__style.window.WINDOW_CORNER_RADIUS_PX > 0:
             path = QPainterPath()
@@ -404,8 +409,9 @@ class ModernWindow(QDialog):
         if isinstance(event, QResizeEvent):
             assert self.__window is not None
             geometry = self.__window.geometry()
-            if sys.platform in ['darwin']:
-                self.setFixedSize(geometry.width() + self.__style.window.SHADOW_RADIUS_PX * 2,  # macOS, Windows (?)
+            print(sys.platform)
+            if sys.platform in ['darwin', 'win32']:
+                self.setFixedSize(geometry.width() + self.__style.window.SHADOW_RADIUS_PX * 2,
                                   geometry.height() + self.__style.window.SHADOW_RADIUS_PX * 2)
             else:
                 self.setFixedSize(geometry.width() + self.__style.window.SHADOW_RADIUS_PX * 2,
@@ -632,7 +638,10 @@ class ModernWindow(QDialog):
             self.__show_resizers(True)
             self.__drag_move_enabled = True
             self.setWindowState(Qt.WindowNoState)
-            self.layout().setMargin(self.__style.window.SHADOW_RADIUS_PX)  # adjust window for drop-shadow margin
+            self.layout().setContentsMargins(self.__style.window.SHADOW_RADIUS_PX,
+                                             self.__style.window.SHADOW_RADIUS_PX,
+                                             self.__style.window.SHADOW_RADIUS_PX,
+                                             self.__style.window.SHADOW_RADIUS_PX)  # adjust window for drop-shadow margin
             if sys.platform == 'win32':
                 # There is a problem with correct redraw / update on Win10 - the transparency of the
                 # shadow effect may be broken on window restore. Re-adjusting the height of the window
@@ -660,7 +669,7 @@ class ModernWindow(QDialog):
 
         if self.__use_shadow:
             self.setWindowState(Qt.WindowMaximized)  # adjust window for drop-shadow margin
-            self.layout().setMargin(0)
+            self.layout().setContentsMargins(0, 0, 0, 0)
             self.__show_resizers(False)
             self.__drag_move_enabled = False
         else:

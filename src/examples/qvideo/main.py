@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtCore import QUrl, QFileInfo
-from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtWidgets import QMainWindow
 from PySide6.QtMultimediaWidgets import QVideoWidget
 from PySide6.QtMultimedia import QMediaPlayer
 from qtmodernredux import QtModernRedux
@@ -25,15 +25,12 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.resize(600, 400)
-        self.media_player = QMediaPlayer(self) #, QMediaPlayer.VideoSurface)
+        self.media_player = QMediaPlayer(self)
         self.video_widget = QVideoWidget(self)
         self.setCentralWidget(self.video_widget)
 
     def showEvent(self, event) -> None:
-        if sys.platform in ['linux', 'darwin']:
-            media_content = QUrl.fromLocalFile(QFileInfo('./../example_data/sample.mp4').absoluteFilePath())
-        else:
-            media_content = QUrl.fromLocalFile(QFileInfo('./../example_data/pusheen.gif').absoluteFilePath())
+        media_content = QUrl.fromLocalFile(QFileInfo('./../example_data/sample.mp4').absoluteFilePath())
         self.media_player.setSource(media_content)
         self.media_player.setVideoOutput(self.video_widget)
         self.video_widget.show()

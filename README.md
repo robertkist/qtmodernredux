@@ -9,12 +9,19 @@ QtModernRedux is a modern dark window and widget theme for PySide2, loosely base
 Gerard Marull-Paretas' excellent qtmodern 0.2.0 theme (https://pypi.org/project/qtmodern/, MIT License).
 
 
-Quick-Start
------------
+Quick-Start - PySide2
+---------------------
 
 If you just want to use QtModernRedux, then the quickest way is to install QtModernRedux from PyPi (https://www.pypi.org/project/QtModernRedux/) via pip:
 
 ```pip install qtmodernredux```
+
+PySide6 Version
+---------------
+
+QtModernRedux for PySide6 (Qt6) can be found here: https://www.pypi.org/project/QtModernRedux6/
+
+You can also find it in this git repository in the `release_pyside6` branch.
 
 Screenshots
 -----------

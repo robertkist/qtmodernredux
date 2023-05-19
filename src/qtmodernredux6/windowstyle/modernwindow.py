@@ -413,7 +413,6 @@ class ModernWindow(QDialog):
         if isinstance(event, QResizeEvent):
             assert self.__window is not None
             geometry = self.__window.geometry()
-            print(sys.platform)
             if sys.platform in ['darwin', 'win32']:
                 self.setFixedSize(geometry.width() + self.__style.window.SHADOW_RADIUS_PX * 2,
                                   geometry.height() + self.__style.window.SHADOW_RADIUS_PX * 2)
